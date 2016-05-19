@@ -1,7 +1,7 @@
 class CustomSet {
 
   constructor(set) {
-    this.set = set;
+    this.set = set || [];
   }
 
   eql(newSet) {
@@ -24,12 +24,18 @@ class CustomSet {
   }
 
   delete(value) {
-    var set = this.set
+    var set = this.set;
     var index = set.indexOf(value);
     if (index >=  0) {
-      set.splice( index, 1 )
+      set.splice( index, 1 );
     }
-    return this
+    return this;
+  }
+
+  empty() {
+    var set = this.set;
+    this.set = []
+    return this;
   }
 }
 
