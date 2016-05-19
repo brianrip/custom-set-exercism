@@ -22,6 +22,15 @@ class CustomSet {
       return !results.includes(false)
     }
   }
+
+  delete(value) {
+    var set = this.set
+    var index = set.indexOf(value);
+    if (index >=  0) {
+      set.splice( index, 1 )
+    }
+    return this
+  }
 }
 
 module.exports = CustomSet;
